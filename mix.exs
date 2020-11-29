@@ -7,7 +7,11 @@ defmodule Helixir.MixProject do
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: description(),
+      package: package(),
+      name: "Helixir",
+      source_url: "https://github.com/sleewoo/helixir"
     ]
   end
 
@@ -23,6 +27,18 @@ defmodule Helixir.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+    ]
+  end
+
+  defp description() do
+    "Build Plug.Router tree from FS and provide render helpers"
+  end
+
+  defp package() do
+    [
+      files: ~w(lib .formatter.exs mix.exs README* LICENSE*),
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/sleewoo/helixir"},
     ]
   end
 end
